@@ -29,6 +29,18 @@ function App() {
 
   return (
     <div className="container">
+      <div>
+        <small>
+          You are running this application in <b>{process.env.NODE_ENV}</b>{" "}
+          mode.
+        </small>
+        <form>
+          <input
+            type="hidden"
+            defaultValue={process.env.REACT_APP_NOT_SECRET_CODE}
+          />
+        </form>
+      </div>
       <h1>Street Workout Partner</h1>
       <UserInputForm generatePrograms={generatePrograms} />
       <ProgramDisplay programs={programs} />

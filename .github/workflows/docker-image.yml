@@ -10,6 +10,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    environment: develop
 
     strategy:
       matrix:
@@ -44,3 +45,5 @@ jobs:
         context: .
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/street-workout-partner-front:latest
+        build-args: |
+          BUILD_ENV=${{ secrets.BUILD_ENV }}
