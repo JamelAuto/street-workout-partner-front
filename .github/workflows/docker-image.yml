@@ -26,7 +26,7 @@ jobs:
         cache: 'npm'
     - run: npm ci
     #- run: npm test
-    - run: npm run ${{ secrets.BUILD_ENV }}
+    - run: npm run ${{ vars.BUILD_ENV }}
 
     - uses: actions/checkout@v4
      
@@ -46,4 +46,4 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/street-workout-partner-front:latest
         build-args: |
-          BUILD_ENV=${{ secrets.BUILD_ENV }}
+          BUILD_ENV=${{ vars.BUILD_ENV }}
