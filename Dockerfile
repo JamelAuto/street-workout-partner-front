@@ -16,6 +16,7 @@ RUN npm install
 #Exposing the container to run on this port 3000
 EXPOSE 3000
 
+ENV BUILD_ENV=${BUILD_ENV}
 
 #Command to start the Docker container for the frontend React.js application
-CMD ["sh", "-c", "npm $BUILD_ENV"]
+CMD npm $BUILD_ENV
